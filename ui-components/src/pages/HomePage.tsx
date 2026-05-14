@@ -8,7 +8,7 @@ const HomePage = () => {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 px-8 py-8">
         {pageVisit.map((componentPage, idx)=>(
-            <Link key={idx} className="h-40 w-full border-2 border-slate-500 rounded-4xl text-center p-4 text-2xl font-semibold text-shadow-md bg-linear-to-br from-slate-100 via-slate-50 to-slate-100 shadow-md hover:scale-105 transition-all duration-300" to={componentPage.link}>{componentPage.component}</Link>
+            <Link key={idx} className="h-40 w-full border-2 border-slate-500 rounded-4xl text-center p-4 text-2xl font-semibold text-shadow-md bg-linear-to-br from-neutral-100 via-neutral-50 to-neutral-100 shadow-md hover:scale-105 transition-all duration-300" to={componentPage.link}>{componentPage.component}</Link>
         ))}
       </div>
     </div>

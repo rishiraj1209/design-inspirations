@@ -8,5 +8,9 @@ export const pageVisit:pageNavigation[] = [
     {
         component:"Cards",
         link:"/cards"
+    },
+    {
+        component:"Bento Grids",
+        link:"/grids"
     }
 ]

@@ -3,6 +3,7 @@ import ButtonsPage from "./pages/ButtonsPage"
 import CardsPage from "./pages/CardsPage"
 import HomePage from "./pages/HomePage"
 import BentoGridPage from "./pages/BentoGridPage"
+import NavbarPage from "./pages/NavbarPage"
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route element={<ButtonsPage/>} path="/buttons"/>
         <Route element={<CardsPage/>} path="/cards"/>
         <Route element={<BentoGridPage/>} path="/grids"/>
+        <Route element={<NavbarPage/>} path="/navbars"/>
       </Routes>
     </>
   )

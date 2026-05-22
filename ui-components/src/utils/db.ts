@@ -12,5 +12,9 @@ export const pageVisit:pageNavigation[] = [
     {
         component:"Bento Grids",
         link:"/grids"
+    },
+    {
+        component:"Navbars",
+        link:"/navbars"
     }
 ]

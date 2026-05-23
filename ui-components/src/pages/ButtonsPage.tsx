@@ -1,6 +1,7 @@
 import GradientBorderButton from "../components/ButtonsPage/gradientBorderButton"
 import GradientHoverButton from "../components/ButtonsPage/gradientHoverButton"
 import MagneticButton from "../components/ButtonsPage/MagneticButton"
+import ShadowButton from "../components/ButtonsPage/ShadowButton"
 
 
 const ButtonsPage = () => {
@@ -14,6 +15,7 @@ const ButtonsPage = () => {
             <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><GradientHoverButton/></div>
             <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><MagneticButton/></div>
             <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><GradientBorderButton/></div>
+            <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><ShadowButton/></div>
           </div>
         </div>
     </div>

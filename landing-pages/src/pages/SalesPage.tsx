@@ -1,3 +1,4 @@
+import { ArrowUpRight, Bug, Check, Play, Plus, Star } from "lucide-react"
 
 const SalesPage = () => {
   return (
@@ -22,13 +23,32 @@ const SalesPage = () => {
         </div>
 
         <div className="flex-1 flex justify-between bg-linear-to-br from-zinc-500 via-zinc-300 to-zinc-100 rounded-4xl my-4">
-            <div>
-
+            <div className="flex flex-col space-y-8 p-8">
+                <div className="flex gap-2 items-center">
+                    <div className="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center"><Bug className="size-4"/></div>
+                    <div className="text-sm">
+                        <p className="font-bold text-base">20M+ Users</p>
+                        <p className="flex gap-1">Read our <span className="font-semibold underline">Success Stories</span></p>
+                    </div>
+                </div>
+                <h1 className="relative font-semibold text-6xl text-shadow-md">Grow <Plus strokeWidth={3} className="absolute top-1 left-40 "/></h1>
+                <div className="border-y py-4 px-2">
+                    <p className="max-w-80 font-light text-sm">Drives Sales Growth, And Harness Ai-Powered User Content - Up To 50x Faster</p>
+                    <div className="flex mt-4 gap-4">
+                        <img className="w-8 h-8 rounded-full object-cover object-top" src="https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                        <p className="text-xs font-medium">Loved the performance <br/> 100% satisfied</p>
+                        <p className="flex items-start gap-2">/ <div className="flex items-center gap-1 text-sm"><Star className="size-3 fill-black"/>4.9</div></p>
+                    </div>
+                </div>
+                <div className="flex gap-4 items-center">
+                    <button type="button" className="bg-black text-sm px-4 py-2 text-white rounded-full font-light">Download - it's free</button>
+                    <a href="#" className="underline flex gap-2 text-sm">Our Pricing <span><ArrowUpRight className="size-4"/></span></a>
+                </div>
             </div>
             <div className="relative pr-30 py-8">
                 <img className=" h-100 w-full object-cover rounded-4xl" src="https://images.unsplash.com/photo-1553591589-2e96ef7eca65?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                <div className="absolute bg-white rounded-full px-4 py-1 top-25 -left-15"> How is the fit ?</div>
-                <div className="absolute bg-white rounded-full px-4 py-1 top-35 -left-30"> Do you like the design ?</div>
+                <div className="absolute bg-white rounded-full px-2 py-1 top-25 -left-15"><div className="flex items-center gap-2"><Check className="bg-orange-600/70 rounded-md size-5 p-0.5"/> How is the fit ?</div></div>
+                <div className="absolute bg-white rounded-full px-2 py-1 top-35 -left-30"><div className="flex items-center gap-2"><Check className="bg-blue-600/70 rounded-md size-5 p-0.5"/> Do you like the design ?</div></div>
                 <div className="absolute bg-zinc-400/40 rounded-4xl p-4 top-25 right-4 border border-zinc-400/60 ">
                     <p>- UP TO</p>
                     <p className="text-4xl">60%</p>
@@ -39,11 +59,11 @@ const SalesPage = () => {
                     <div>
                         <p>Nike Shoes Jordan</p>
                         <p className="text-2xl font-semibold">$849.99</p>
-                        <p className="text-sm bg-white px-2 inline-block rounded-full font-semibold">4.6</p>
+                        <p className="text-sm bg-white px-2 rounded-full font-semibold inline-block"><div className="flex items-center gap-1"><Star className="size-4 fill-black"/>4.6</div></p>
                     </div>   
                 </div>
-                <div className="absolute bg-white rounded-full top-45 right-58 h-12 w-12">
-
+                <div className="absolute bg-white rounded-full top-45 right-58 h-12 w-12 flex items-center justify-center">
+                    <Play className="fill-black size-4"/>
                 </div>
             </div>
         </div>

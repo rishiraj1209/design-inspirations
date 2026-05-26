@@ -1,8 +1,11 @@
-import { BriefcaseBusiness, CalendarDays, ChartPie, House, LogOut, MapPin, Search, User } from "lucide-react"
+import { ArrowRight, BriefcaseBusiness, CalendarDays, ChartPie, House, LogOut, MapPin, Search, Settings2, User } from "lucide-react"
+import { hotels } from "../utils/innrevDB"
+import HotelOverviewCard from "../components/innrevDashboard/HotelOverviewCard"
+import ADRrow from "../components/innrevDashboard/ADRrow"
 
 const InnrevDashboard = () => {
   return (
-    <div className='h-screen bg-linear-to-r from-indigo-200 via-pink-100 to-fuchsia-200 py-16 px-32'>
+    <div className='h-screen bg-linear-to-r from-indigo-200 via-pink-100 to-fuchsia-200 py-4 px-32'>
       <div className="rounded-4xl border-3 border-white h-full w-full p-4 bg-neutral-100/20 flex flex-col">
         <nav className="flex items-center justify-between">
           <div className="bg-white rounded-full flex items-center gap-2 p-1 pr-4">
@@ -30,8 +33,8 @@ const InnrevDashboard = () => {
           </div>
         </nav>
 
-        <div className="flex-1 mt-2">
-          <div className="flex h-full items-center gap-2">
+        <div className="flex-1 mt-4">
+          <div className="flex h-full items-center gap-4">
             <div className="w-12 bg-white h-full rounded-full flex flex-col justify-between items-center p-1">
               <div className="flex flex-col gap-2 items-center">
                 <div className="rounded-full bg-indigo-400 flex items-center justify-center w-10 h-10 text-white"><House className="size-4"/></div>
@@ -45,8 +48,49 @@ const InnrevDashboard = () => {
               </div>
             </div>
 
-            <div className=" bg-white flex-1 h-full rounded-4xl">
+            <div className="flex-1 h-full rounded-4xl ">
+              <div className="grid grid-cols-3 grid-rows-12 gap-4 h-full w-full">
+                <div className="col-span-3 row-span-5 bg-zinc-50/50 rounded-2xl p-2">
+                  <div className="flex justify-between">
+                    <p className="">Hotels Overview</p>
+                    <div className="bg-white rounded-full flex items-center justify-center h-8 w-8">
+                      <ArrowRight className="size-4"/>
+                    </div>
+                  </div>
 
+                  <div className="flex items-center justify-between gap-2 w-full h-fit">
+                    {hotels.map((hotel)=>(
+                      <HotelOverviewCard key={hotel.id} {...hotel}/>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="col-span-2 row-span-7 bg-zinc-50/50 rounded-2xl p-2">
+                  <p>Your Overview</p>
+                </div>
+
+                <div className="col-span-1 row-span-7 bg-zinc-50/50 rounded-2xl p-2">
+
+                  <div className="flex justify-between">
+                    <p className="">Hotels ADR</p>
+                    <div className="bg-white rounded-full flex items-center px-4 py-2 gap-2">
+                      <p className="text-xs text-neutral-600">filter</p>
+                      <Settings2 className="size-4"/>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between items-center px-2 pt-2">
+                    <p className="text-sm text-neutral-600">Hotels</p>
+                    <p className="text-sm">ADR</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 mt-4">
+                    {hotels.map((hotel)=>(
+                      <ADRrow key={hotel.id} {...hotel}/>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>

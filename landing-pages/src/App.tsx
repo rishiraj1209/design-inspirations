@@ -1,4 +1,3 @@
-import React from 'react'
 import SalesPage from './pages/SalesPage'
 
 const App = () => {

@@ -1,7 +1,8 @@
 import { ArrowRight, BriefcaseBusiness, CalendarDays, ChartPie, House, LogOut, MapPin, Search, Settings2, User } from "lucide-react"
-import { hotels } from "../utils/innrevDB"
+import { hotels, yourOverview } from "../utils/innrevDB"
 import HotelOverviewCard from "../components/innrevDashboard/HotelOverviewCard"
 import ADRrow from "../components/innrevDashboard/ADRrow"
+import YourOverviewCard from "../components/innrevDashboard/YourOverviewCard"
 
 const InnrevDashboard = () => {
   return (
@@ -66,7 +67,12 @@ const InnrevDashboard = () => {
                 </div>
 
                 <div className="col-span-2 row-span-7 bg-zinc-50/50 rounded-2xl p-2">
-                  <p>Your Overview</p>
+                  <p >Your Overview</p>
+                  <div className="grid grid-cols-2 gap-8 h-full w-full">
+                    {yourOverview.map((overview)=>(
+                      <YourOverviewCard key={overview.id} {...overview}/>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="col-span-1 row-span-7 bg-zinc-50/50 rounded-2xl p-2">

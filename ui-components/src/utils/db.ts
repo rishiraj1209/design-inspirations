@@ -16,5 +16,9 @@ export const pageVisit:pageNavigation[] = [
     {
         component:"Navbars",
         link:"/navbars"
+    },
+    {
+        component:"Modals",
+        link:"/modals"
     }
 ]

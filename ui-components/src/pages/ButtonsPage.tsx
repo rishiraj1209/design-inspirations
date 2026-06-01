@@ -12,10 +12,10 @@ const ButtonsPage = () => {
 
         <div className="min-h-screen bg-neutral-300 rounded-lg mt-8 p-4 shadow-sm border-2 border-zinc-300">
           <div className="bg-neutral-100 rounded-lg min-h-screen shadow-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 p-8">
-            <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><GradientHoverButton/></div>
-            <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><MagneticButton/></div>
-            <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><GradientBorderButton/></div>
-            <div className="w-full h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><ShadowButton/></div>
+            <div className="w-full min-h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><GradientHoverButton/></div>
+            <div className="w-full min-h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><MagneticButton/></div>
+            <div className="w-full min-h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><GradientBorderButton/></div>
+            <div className="w-full min-h-50 border border-zinc-200 rounded-md flex items-center justify-center hover:border-zinc-300 transition-all duration-300"><ShadowButton/></div>
           </div>
         </div>
     </div>

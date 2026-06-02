@@ -1,50 +1,60 @@
-import { Calendar, Flag, Folder, Notebook, Plus, StickyNote, Trophy, XIcon } from "lucide-react";
-import { useState } from "react"
+import {
+  Calendar, Flag, Folder, Notebook,
+  Plus, StickyNote, Trophy, XIcon
+} from "lucide-react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
+const items = [
+  { icon: Folder, label: "Project" },
+  { icon: Notebook, label: "Notebook" },
+  { icon: StickyNote, label: "Notes" },
+  { icon: Trophy, label: "Goal" },
+  { icon: Flag, label: "Milestone" },
+  { icon: Calendar, label: "Event" },
+];
 
 const CreateModal = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsopen] = useState(false);
   return (
-    <>
-      <motion.div layout className={`${isOpen?'p-1 rounded-lg bg-black':''}`}>
-        <motion.button layout onClick={()=>{setIsOpen(!isOpen)}} className={`bg-black text-white font-medium flex items-center rounded-full py-2 px-4 w-full gap-2 justify-between`}>
-            <p>Create New</p>
-            <span>{isOpen? <XIcon/>:<Plus/>}</span>
-        </motion.button>
-        <AnimatePresence mode="wait">
-            {isOpen && 
-                <motion.div layout initial={{opacity:0, scale:0}} animate={{opacity:1, scale:1}} exit={{opacity:0, scale:0}} transition={{duration:0.3,ease:'easeInOut'}}
-                 className={`grid grid-cols-3 bg-white rounded-lg gap-2 p-4 `}>
-                    <div className={`rounded-lg bg-transparent hover:bg-neutral-100 flex flex-col items-center justify-center p-2 cursor-pointer transition-all duration-300`}>
-                        <div><Folder className="size-5"/></div>
-                        <p className="text-sm">Project</p>
-                    </div>
-                    <div className={`rounded-lg bg-transparent hover:bg-neutral-100 flex flex-col items-center justify-center p-2 cursor-pointer transition-all duration-300`}>
-                        <div><Notebook className="size-5"/></div>
-                        <p className="text-sm">Notebook</p>
-                    </div>
-                    <div className={`rounded-lg bg-transparent hover:bg-neutral-100 flex flex-col items-center justify-center p-2 cursor-pointer transition-all duration-300`}>
-                        <div><StickyNote className="size-5"/></div>
-                        <p className="text-sm">Notes</p>
-                    </div>
-                    <div className={`rounded-lg bg-transparent hover:bg-neutral-100 flex flex-col items-center justify-center p-2 cursor-pointer transition-all duration-300`}>
-                        <div><Trophy className="size-5"/></div>
-                        <p className="text-sm">Goal</p>
-                    </div>
-                    <div className={`rounded-lg bg-transparent hover:bg-neutral-100 flex flex-col items-center justify-center p-2 cursor-pointer transition-all duration-300`}>
-                        <div><Flag className="size-5"/></div>
-                        <p className="text-sm">Milestone</p>
-                    </div>
-                    <div className={`rounded-lg bg-transparent hover:bg-neutral-100 flex flex-col items-center justify-center p-2 cursor-pointer transition-all duration-300`}>
-                        <div><Calendar className="size-5"/></div>
-                        <p className="text-sm">Event</p>
-                    </div>
+  <AnimatePresence mode="wait">
+    {!isOpen?
+        (
+        <motion.div layoutId="modal">
+            <motion.button layoutId="modal-button" onClick={()=>{setIsopen(true)}} className="px-4 py-2 flex items-center gap-2 bg-black text-white font-medium rounded-full">
+                <motion.p layoutId="modal-para">Create New</motion.p>
+                <motion.div layoutId="modal-icon"><Plus/></motion.div>
+            </motion.button>
+        </motion.div>
+    ):
+        (
+        <motion.div layoutId="modal" className="bg-black p-1 rounded-lg overflow-hidden">
+            <motion.button layoutId="modal-button" onClick={()=>{setIsopen(false)}} className="px-4 py-2 flex items-center justify-between w-full text-white font-medium">
+                <motion.p layoutId="modal-para">Create New</motion.p>
+                <motion.div layoutId="modal-icon"><XIcon/></motion.div>
+            </motion.button>
+            <AnimatePresence mode="wait">
+                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.25,}} className="grid grid-cols-3 gap-1 p-3 bg-neutral-100 rounded-lg">
+                    {items.map(({ icon: Icon, label }, i) => (
+                        <div
+                        className="rounded-xl flex flex-col items-center justify-center py-2 px-2 gap-2 hover:bg-neutral-200 cursor-pointer transition-all duration-300"
+                        >
+                        <Icon
+                            className="size-5 text-neutral-700"
+                        />
+                        <span className="text-xs text-neutral-700">
+                            {label}
+                        </span>
+                        </div>
+                    ))}
                 </motion.div>
-            }
-        </AnimatePresence>
-      </motion.div>
-    </>
+            </AnimatePresence>
+            
+        </motion.div>
+    )
+    }
+  </AnimatePresence>
+    
   )
 }
 

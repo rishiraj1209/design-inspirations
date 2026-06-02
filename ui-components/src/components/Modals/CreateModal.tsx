@@ -35,7 +35,7 @@ const CreateModal = () => {
             </motion.button>
             <AnimatePresence mode="wait">
                 <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.25,}} className="grid grid-cols-3 gap-1 p-3 bg-neutral-100 rounded-lg">
-                    {items.map(({ icon: Icon, label }, i) => (
+                    {items.map(({ icon: Icon, label }) => (
                         <div
                         className="rounded-xl flex flex-col items-center justify-center py-2 px-2 gap-2 hover:bg-neutral-200 cursor-pointer transition-all duration-300"
                         >

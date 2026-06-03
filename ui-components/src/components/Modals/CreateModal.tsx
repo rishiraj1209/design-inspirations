@@ -21,7 +21,7 @@ const CreateModal = () => {
     {!isOpen?
         (
         <motion.div layoutId="modal">
-            <motion.button layoutId="modal-button" onClick={()=>{setIsopen(true)}} className="px-4 py-2 flex items-center gap-2 bg-black text-white font-medium rounded-full">
+            <motion.button layoutId="modal-button" onClick={()=>{setIsopen(true)}} className="px-4 py-2 flex items-center gap-2 bg-black text-white font-medium rounded-full cursor-pointer">
                 <motion.p layoutId="modal-para">Create New</motion.p>
                 <motion.div layoutId="modal-icon"><Plus/></motion.div>
             </motion.button>
@@ -29,7 +29,7 @@ const CreateModal = () => {
     ):
         (
         <motion.div layoutId="modal" className="bg-black p-1 rounded-lg overflow-hidden">
-            <motion.button layoutId="modal-button" onClick={()=>{setIsopen(false)}} className="px-4 py-2 flex items-center justify-between w-full text-white font-medium">
+            <motion.button layoutId="modal-button" onClick={()=>{setIsopen(false)}} className="px-4 py-2 flex items-center justify-between w-full text-white font-medium cursor-pointer">
                 <motion.p layoutId="modal-para">Create New</motion.p>
                 <motion.div layoutId="modal-icon"><XIcon/></motion.div>
             </motion.button>

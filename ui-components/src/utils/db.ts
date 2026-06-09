@@ -20,5 +20,9 @@ export const pageVisit:pageNavigation[] = [
     {
         component:"Modals",
         link:"/modals"
+    },
+    {
+        component:"Search Bars",
+        link:"/searchBar"
     }
 ]

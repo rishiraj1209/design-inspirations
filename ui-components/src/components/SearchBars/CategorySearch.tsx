@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { Search, X, Flame, Heart } from "lucide-react";
 
 const tabs = [
@@ -19,43 +19,38 @@ export default function SearchMorph() {
 
   return (
     <div className="bg-neutral-100 h-40 w-full shadow-md rounded-2xl flex items-center justify-center">
-        <div className="flex items-center gap-4">
-            <AnimatePresence>
+        <div className="flex items-center gap-4 width-[240px]">
                 {
                     !searchMode?
                     (
                         <motion.div
                         layoutId="search"
-                        transition={{type: "spring",stiffness: 350,damping: 30,}}
+                        transition={{type: "spring",stiffness: 200,damping: 20,}}
                         >
-                            <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md" onClick={()=>{setSearchMode(true)}} aria-label="search-button">
+                            <motion.button  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md" onClick={()=>{setSearchMode(true)}} aria-label="search-button">
                                 <Search className="size-5"/>
-                            </button>
+                            </motion.button>
                         </motion.div>
                     ):
                     (
                         <motion.div
                         layoutId="search"
-                        transition={{type: "spring",stiffness: 350,damping: 30,}}
+                        transition={{type: "spring",stiffness: 200,damping: 20,}}
                         >
-                            <div className="flex items-center gap-2 bg-white rounded-full px-4 py-3 shadow-md">
+                            <motion.div className="flex items-center gap-2 bg-white rounded-full px-4 py-3 shadow-md">
                                 <Search/>
                                 <input type="text" placeholder="search" className="outline-0 bg-transparent"/>
-                            </div>
+                            </motion.div>
                         </motion.div>
                     )
                 }
-            </AnimatePresence>
-            
-            <AnimatePresence>
+
                 {
                     !searchMode?
                     (
                         <motion.div
                             layoutId="filter"
-                            initial={{opacity:0, filter:"blur(10px)"}}
-                            animate={{opacity:1, filter:"blur(0px)"}}
-                            transition={{type: "spring",stiffness: 350,damping: 30,}}
+                            transition={{type: "spring",stiffness: 200,damping: 20,}}
                             className="flex items-center gap-2 bg-white rounded-full p-1 shadow-md">
                             {tabs.map((tab)=>{
                                 const Icon = tab.icon;
@@ -75,7 +70,7 @@ export default function SearchMorph() {
                     (
                         <motion.div
                         layoutId="filter"
-                        transition={{type: "spring",stiffness: 350,damping: 30,}}
+                        transition={{type: "spring",stiffness: 200,damping: 20,}}
                         >
                             <button className="bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-full" onClick={()=>{setSearchMode(false)}} aria-label="search-button">
                                 <X/>
@@ -83,9 +78,13 @@ export default function SearchMorph() {
                         </motion.div>
                     )
                 }
-            </AnimatePresence>
             
         </div>
     </div>
   );
 }
+
+
+
+
+

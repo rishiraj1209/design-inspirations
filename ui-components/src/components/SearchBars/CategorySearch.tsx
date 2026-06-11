@@ -27,8 +27,8 @@ export default function SearchMorph() {
                         layoutId="search"
                         transition={{type: "spring",stiffness: 200,damping: 20,}}
                         >
-                            <motion.button  className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md" onClick={()=>{setSearchMode(true)}} aria-label="search-button">
-                                <Search className="size-5"/>
+                            <motion.button className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md" onClick={()=>{setSearchMode(true)}} aria-label="search-button">
+                                <Search className="w-5 h-5 shrink-0"/>
                             </motion.button>
                         </motion.div>
                     ):
@@ -38,7 +38,7 @@ export default function SearchMorph() {
                         transition={{type: "spring",stiffness: 200,damping: 20,}}
                         >
                             <motion.div className="flex items-center gap-2 bg-white rounded-full px-4 py-3 shadow-md">
-                                <Search/>
+                                <Search className="w-5 h-5 shrink-0"/>
                                 <input type="text" placeholder="search" className="outline-0 bg-transparent"/>
                             </motion.div>
                         </motion.div>
@@ -59,7 +59,7 @@ export default function SearchMorph() {
                                         {activeTab == tab.label &&
                                         <motion.div layoutId="tab-pill" transition={{type: "spring",stiffness: 250,damping: 25,}} className="absolute inset-0 bg-red-50 z-10 rounded-full h-full w-full "></motion.div>}
                                         <div className={`relative flex items-center gap-1 z-20 px-4 py-2 font-medium ${activeTab === tab.label ? 'text-red-500':'text-neutral-700'}`}>
-                                            <Icon/>
+                                            <Icon className="w-5 h-5 shrink-0"/>
                                             <span>{tab.label}</span>
                                         </div>
                                     </button>
@@ -73,7 +73,7 @@ export default function SearchMorph() {
                         transition={{type: "spring",stiffness: 200,damping: 20,}}
                         >
                             <button className="bg-white shadow-md w-12 h-12 flex items-center justify-center rounded-full" onClick={()=>{setSearchMode(false)}} aria-label="search-button">
-                                <X/>
+                                <X className="w-5 h-5 shrink-0"/>
                             </button>
                         </motion.div>
                     )

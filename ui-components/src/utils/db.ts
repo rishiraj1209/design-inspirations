@@ -24,5 +24,9 @@ export const pageVisit:pageNavigation[] = [
     {
         component:"Search Bars",
         link:"/searchBar"
+    },
+    {
+        component:"Layout Grids",
+        link:"/layoutgrids"
     }
 ]

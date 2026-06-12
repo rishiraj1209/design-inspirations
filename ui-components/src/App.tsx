@@ -6,6 +6,7 @@ import BentoGridPage from "./pages/BentoGridPage"
 import NavbarPage from "./pages/NavbarPage"
 import ModalsPage from "./pages/ModalsPage"
 import SearchBarPage from "./pages/SearchBarPage"
+import LayoutGridPage from "./pages/LayoutGridPage"
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route element={<NavbarPage/>} path="/navbars"/>
         <Route element={<ModalsPage/>} path="/modals"/>
         <Route element={<SearchBarPage/>} path="/searchBar"/>
+        <Route element={<LayoutGridPage/>} path="/layoutgrids"/>
       </Routes>
     </>
   )

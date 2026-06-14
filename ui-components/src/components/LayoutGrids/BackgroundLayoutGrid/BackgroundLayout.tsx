@@ -4,10 +4,10 @@ import type { GridData } from "../../../types"
 import { motion } from "motion/react"
 
 const BackgroundLayout = () => {
-    const [items, setItems] = useState<GridData[]>(articles);
+    const items: GridData[] = articles;
     const [active, setActive] = useState<null|number>(null);
   return (
-    <div>
+    <div className="p-8 rounded-2xl w-full bg-zinc-200 min-h-screen">
         <h2 className="text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-b from-neutral-800 to-neutral-900 mb-8">Background Layout Animations</h2>
         <div className="grid grid-cols-4 max-w-5xl mx-auto">
             {items.map((item)=>(

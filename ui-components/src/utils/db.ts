@@ -28,5 +28,9 @@ export const pageVisit:pageNavigation[] = [
     {
         component:"Layout Grids",
         link:"/layoutgrids"
+    },
+    {
+        component:"Carousels",
+        link:"/carousels"
     }
 ]

@@ -7,6 +7,7 @@ import NavbarPage from "./pages/NavbarPage"
 import ModalsPage from "./pages/ModalsPage"
 import SearchBarPage from "./pages/SearchBarPage"
 import LayoutGridPage from "./pages/LayoutGridPage"
+import CarouselsPage from "./pages/CarouselsPage"
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route element={<ModalsPage/>} path="/modals"/>
         <Route element={<SearchBarPage/>} path="/searchBar"/>
         <Route element={<LayoutGridPage/>} path="/layoutgrids"/>
+        <Route element={<CarouselsPage/>} path="/carousels"/>
       </Routes>
     </>
   )
